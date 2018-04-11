@@ -127,6 +127,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeLinePrefab: {fileID: 1756836648066810, guid: 626f662e15b744b9eb846dc1f71dc904,
     type: 2}
+  townSprite: {fileID: 21300000, guid: acca681254e76454ebdbfcc99210bf2b, type: 3}
+  wildSprite: {fileID: 21300000, guid: 601f959a75a3947ee9ae75ec4c3de2ac, type: 3}
+  ruinSprite: {fileID: 21300000, guid: e423a337d6952412fb739a1b9af83866, type: 3}
   coordinateLabel: {fileID: 114587974173535540}
   environmentLabel: {fileID: 114098514984339960}
   activityLabel: {fileID: 114587341405469454}

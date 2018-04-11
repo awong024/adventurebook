@@ -6,6 +6,9 @@ using UnityEngine.UI;
 //Actualization of MapNode
 public class NetworkNode : MonoBehaviour {
     [SerializeField] GameObject nodeLinePrefab;
+    [SerializeField] Sprite townSprite;
+    [SerializeField] Sprite wildSprite;
+    [SerializeField] Sprite ruinSprite;
     [SerializeField] Text coordinateLabel;
     [SerializeField] Text environmentLabel;
     [SerializeField] Text activityLabel;
@@ -54,8 +57,17 @@ public class NetworkNode : MonoBehaviour {
     }
 
     public void LoadEvent(Event ev) {
+        Image image = GetComponent<Image>();
+
         nodeEvent = ev;
-        environmentLabel.text = ev.EnvironmentType.ToString();
+        if (ev.EnvironmentType == EnvironmentType.Town) {
+            image.sprite = townSprite;
+        } else if (ev.EnvironmentType == EnvironmentType.Wild) {
+            image.sprite = wildSprite;
+        } else if (ev.EnvironmentType == EnvironmentType.Ruins) {
+            image.sprite = ruinSprite;
+        }
+
         if (ev.Activity is Challenge) {
             activityLabel.text = "Challenge";
         } else if (ev.Activity is Encounter) {

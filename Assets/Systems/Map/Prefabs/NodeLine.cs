@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NodeLine : MonoBehaviour {
+    [SerializeField] Material lineMaterial;
+
     private GameObject gameObject1;
     private GameObject gameObject2;
 
@@ -13,6 +15,7 @@ public class NodeLine : MonoBehaviour {
         line.startColor = Color.black;
         line.endColor = Color.black;
         line.positionCount = 2;
+        line.material = lineMaterial;
 
         gameObject1 = g1;
         gameObject2 = g2;
