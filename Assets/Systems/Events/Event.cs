@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EnvironmentType {
+    Town,
+    Wild,
+    Ruins
+}
+
 public enum EventType {
     Encounter,
     Merchant,
     Exploration,
 }
 
-//Base Class
 public class Event {
-    //Gold Reward
-    //Card Reward
+    
 }

@@ -16,15 +16,9 @@ public class NodeNetworkController : MonoBehaviour {
         networkNodes = nodeNetworkView.GenerateNodeNetwork(map, this);
 
         CreateNodeLinks();
+        EventRules.PopulateEvents(networkNodes);
 
         PlacePlayerFigurine();
-    }
-
-    public void NodeClicked(NetworkNode node) {
-        if (playerFigurine.CurrentNode.HasExitTo(node)) {
-            MovePlayerFigurine(node);
-        }
-        PanelManager.DisplayEventPanel();
     }
 
     private void CreateNodeLinks() {
@@ -37,6 +31,15 @@ public class NodeNetworkController : MonoBehaviour {
                 }
             }
         }
+    }
+
+    public void NodeClicked(NetworkNode node)
+    {
+        if (playerFigurine.CurrentNode.HasExitTo(node))
+        {
+            MovePlayerFigurine(node);
+        }
+        PanelManager.DisplayEventPanel();
     }
 
     private void PlacePlayerFigurine() {
