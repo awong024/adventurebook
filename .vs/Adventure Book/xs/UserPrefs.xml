@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{5EEE0058-BE17-4023-6A80-B9657079FB9C}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Systems/GameRules/PhaseManager.cs">
+    <Files>
+      <File FileName="Assets/Systems/UI/EventPanel.cs" Line="13" Column="24" />
+      <File FileName="Assets/Systems/UI/Base/Panel.cs" Line="9" Column="6" />
+      <File FileName="Assets/Systems/UI/PanelManager.cs" Line="15" Column="52" />
+      <File FileName="Assets/Systems/Map/Prefabs/NetworkNode.cs" Line="35" Column="36" />
+      <File FileName="Assets/Systems/Map/NodeNetworkController.cs" Line="27" Column="42" />
+      <File FileName="Assets/Systems/GameRules/PhaseManager.cs" Line="6" Column="17" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Adventure_220Book PreferredExecutionTarget="Unity.Editor" />
+</Properties>
