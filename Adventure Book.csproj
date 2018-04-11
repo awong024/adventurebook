@@ -263,7 +263,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Systems\Battle\BattleCharacter.cs" />
+    <Compile Include="Assets\Systems\Events\Challenge.cs" />
+    <Compile Include="Assets\Systems\Events\Encounter.cs" />
     <Compile Include="Assets\Systems\Events\Event.cs" />
+    <Compile Include="Assets\Systems\Events\Merchant.cs" />
     <Compile Include="Assets\Systems\GameRules\EventRules.cs" />
     <Compile Include="Assets\Systems\GameRules\PhaseManager.cs" />
     <Compile Include="Assets\Systems\Items\InventoryManager.cs" />

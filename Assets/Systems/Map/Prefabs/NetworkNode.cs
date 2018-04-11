@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class NetworkNode : MonoBehaviour {
     [SerializeField] GameObject nodeLinePrefab;
     [SerializeField] Text coordinateLabel;
+    [SerializeField] Text environmentLabel;
+    [SerializeField] Text activityLabel;
 
     private MapNode mapNode;
 
@@ -15,6 +17,11 @@ public class NetworkNode : MonoBehaviour {
     private List<NetworkNode> exitNodes = new List<NetworkNode>();
 
     private NodeNetworkController networkController;
+
+    //Node Game Elements
+    private Event nodeEvent;
+
+    public Event Event { get { return nodeEvent; } }
 
     public void Init(MapNode mapNode, NodeNetworkController controller) {
         networkController = controller;
@@ -44,5 +51,20 @@ public class NetworkNode : MonoBehaviour {
         GameObject line = GameObject.Instantiate(nodeLinePrefab) as GameObject;
         line.transform.SetParent(transform, false);
         line.GetComponent<NodeLine>().DrawNewLineBetween(this.gameObject, destinationNode.gameObject);
+    }
+
+    public void LoadEvent(Event ev) {
+        nodeEvent = ev;
+        environmentLabel.text = ev.EnvironmentType.ToString();
+        if (ev.Activity is Challenge) {
+            activityLabel.text = "Challenge";
+        } else if (ev.Activity is Encounter) {
+            activityLabel.text = "Encounter";
+        } else if (ev.Activity is Merchant) {
+            activityLabel.text = "Merchant";
+        } else {
+            activityLabel.text = "";
+        }
+
     }
 }

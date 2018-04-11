@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PanelManager : MonoBehaviour {
-    [SerializeField] Panel eventPanel;
+    [SerializeField] EventPanel eventPanel;
 
     private static PanelManager instance;
 
@@ -11,8 +11,9 @@ public class PanelManager : MonoBehaviour {
         instance = this;
 	}
 
-	public static void DisplayEventPanel() {
+	public static void DisplayEventPanel(Event nodeEvent) {
         instance.DisplayPanel(instance.eventPanel);
+        instance.eventPanel.Render(nodeEvent);
     }
 
     private void DisplayPanel(Panel panel) {

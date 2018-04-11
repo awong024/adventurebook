@@ -35,11 +35,10 @@ public class NodeNetworkController : MonoBehaviour {
 
     public void NodeClicked(NetworkNode node)
     {
-        if (playerFigurine.CurrentNode.HasExitTo(node))
-        {
+        if (playerFigurine.CurrentNode.HasExitTo(node)) {
             MovePlayerFigurine(node);
         }
-        PanelManager.DisplayEventPanel();
+        PanelManager.DisplayEventPanel(node.Event);
     }
 
     private void PlacePlayerFigurine() {
