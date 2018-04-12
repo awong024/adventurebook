@@ -42,12 +42,27 @@ public class GameManager : MonoBehaviour {
         currentPhase = phase;
     }
 
-    public static bool ChooseStartingNode() {
-        return instance.currentPhase == Phase.ChooseStart;
+    public static bool ChooseStartingNode(NetworkNode node) {
+        if (instance.currentPhase == Phase.ChooseStart && node.Node.NodeRow == 0) {
+            //Picked Starting Node
+            instance.SetPhase(Phase.Event);
+            PanelManager.DisplayEventPanel(node.Event);
+            return true;
+        }
+        return false;
     }
 
-    public static bool ChooseNextNodePhase() {
-        return instance.currentPhase == Phase.Movement;
+    public static bool ChooseNextNodePhase(NetworkNode node) {
+        if (instance.currentPhase == Phase.Movement) {
+            instance.SetPhase(Phase.Event);
+            PanelManager.DisplayEventPanel(node.Event);
+            return true;
+        }
+        return false;
+    }
+
+    public static void EventCompleted() {
+        instance.SetPhase(Phase.Movement);
     }
 
     public static void PlayPeeple(PeepleFigurine peepleFigurine) {

@@ -9,7 +9,7 @@ public enum EnvironmentType {
 }
 
 public class Activity {
-    //Reward
+    
 }
 
 //Each Node has one Event
@@ -38,5 +38,9 @@ public class Event {
     public void GenerateRuinsEvent() {
         environmentType = EnvironmentType.Ruins;
         activities.Add(new Challenge());
+    }
+
+    public bool ProcessEvent() {
+        return true;
     }
 }
