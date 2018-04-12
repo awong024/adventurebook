@@ -15,3 +15,5 @@ MonoBehaviour:
   peepleType: 3
   gameText: 
   basePeeple: 1
+  portraitArt: {fileID: 21300000, guid: a3d0c0f02c98e475f91200338e99d94a, type: 3}
+  fullArt: {fileID: 21300000, guid: c00dc7348dbbe472682ae77a37a9209e, type: 3}

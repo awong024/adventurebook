@@ -24,4 +24,9 @@ public class PeepleManager : MonoBehaviour {
             }
         }
     }
+
+    public Peeple DrawPeepleFromPool() {
+        int random = UnityEngine.Random.Range(0, peeplePool.Count);
+        return peeplePool[random];
+    }
 }

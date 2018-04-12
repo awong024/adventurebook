@@ -37,6 +37,16 @@ public class GameManager : MonoBehaviour {
         peepleDataManager.LoadAllPeeples();
 
         SetPhase(Phase.ChooseStart);
+
+        StartCoroutine(StartGameFlow());
+    }
+
+    private IEnumerator StartGameFlow() {
+        //Let's Unity UI take a frame to setup
+        yield return new WaitForEndOfFrame();
+
+        DrawPeeple();
+        DrawPeeple();
     }
 
     private void SetPhase(Phase phase) {
@@ -64,6 +74,10 @@ public class GameManager : MonoBehaviour {
 
     public static void EventCompleted() {
         instance.SetPhase(Phase.Movement);
+    }
+
+    private void DrawPeeple() {
+        peepleTray.CreateNewPeeple(peepleDataManager.DrawPeepleFromPool());
     }
 
     public static void PlayPeeple(PeepleFigurine peepleFigurine) {

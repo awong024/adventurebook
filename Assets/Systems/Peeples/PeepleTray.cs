@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PeepleTray : MonoBehaviour {
+    [SerializeField] GameObject peepleFigurinePrefab;
     [SerializeField] GameObject[] peepleSlots;
+    [SerializeField] Transform peepleLayer;
 
     //Init to 7 blank Peeple Figurines
     [SerializeField] PeepleFigurine[] heldFigurines;
@@ -18,8 +20,17 @@ public class PeepleTray : MonoBehaviour {
         instance = this;
 	}
 
-    public static void CreateNewPeeple(Peeple peeple) {
-        
+    public void CreateNewPeeple(Peeple peeple) {
+        for (int i = 0; i < heldFigurines.Length; i++) {
+            if (heldFigurines[i] == null) {
+                GameObject fig = GameObject.Instantiate(instance.peepleFigurinePrefab, peepleLayer) as GameObject;
+                PeepleFigurine figurine = fig.GetComponent<PeepleFigurine>();
+                figurine.Render(peeple);
+
+                SetPeepleToSlot(figurine, i);
+                return;
+            }
+        }
     }
 
 	public static void PlacePeepleOnSlot(PeepleFigurine peeple, int fromIndex, GameObject toSlot) {

@@ -308,6 +308,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61bead4d701b4b19a2736b15e1c4db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  peepleFigurinePrefab: {fileID: 1799418134435528, guid: f829df50cc59646e087ebf5d374a57be,
+    type: 2}
   peepleSlots:
   - {fileID: 1899683813053576}
   - {fileID: 1125752046741562}
@@ -316,7 +318,7 @@ MonoBehaviour:
   - {fileID: 1595423296245118}
   - {fileID: 1042821445013926}
   - {fileID: 1186169103094242}
-  peeplePlacementLayout: {fileID: 0}
+  peepleLayer: {fileID: 224717553045365174}
   heldFigurines:
   - {fileID: 0}
   - {fileID: 0}

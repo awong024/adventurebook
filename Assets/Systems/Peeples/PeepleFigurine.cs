@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class PeepleFigurine : MonoBehaviour {
+    [SerializeField] Image image;
 
     private Peeple peeple;
 
@@ -12,5 +13,6 @@ public class PeepleFigurine : MonoBehaviour {
 
 	public void Render(Peeple peeple) {
         this.peeple = peeple;
+        image.sprite = peeple.PortraitArt;
 	}
 }
