@@ -295,12 +295,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   peepleSlots:
   - {fileID: 1899683813053576}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1125752046741562}
+  - {fileID: 1381994155078510}
+  - {fileID: 1015018801819312}
+  - {fileID: 1595423296245118}
+  - {fileID: 1042821445013926}
+  - {fileID: 1186169103094242}
 --- !u!114 &114546977690109776
 MonoBehaviour:
   m_ObjectHideFlags: 1
