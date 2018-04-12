@@ -5,12 +5,11 @@ using UnityEngine.UI;
 
 //Actualization of MapNode
 public class NetworkNode : MonoBehaviour {
+    [SerializeField] Image image;
     [SerializeField] GameObject nodeLinePrefab;
     [SerializeField] Sprite townSprite;
     [SerializeField] Sprite wildSprite;
     [SerializeField] Sprite ruinSprite;
-    [SerializeField] Text coordinateLabel;
-    [SerializeField] Text environmentLabel;
     [SerializeField] Text activityLabel;
 
     private MapNode mapNode;
@@ -29,7 +28,6 @@ public class NetworkNode : MonoBehaviour {
     public void Init(MapNode mapNode, NodeNetworkController controller) {
         networkController = controller;
         this.mapNode = mapNode;
-        coordinateLabel.text = "(" + mapNode.NodeRow + "," + mapNode.NodePosition + ")";
 	}
 
     public bool HasExitTo(NetworkNode node) {
@@ -53,12 +51,11 @@ public class NetworkNode : MonoBehaviour {
     private void DrawLineTo(NetworkNode destinationNode) {
         GameObject line = GameObject.Instantiate(nodeLinePrefab) as GameObject;
         line.transform.SetParent(transform, false);
+        line.transform.SetAsFirstSibling();
         line.GetComponent<NodeLine>().DrawNewLineBetween(this.gameObject, destinationNode.gameObject);
     }
 
     public void LoadEvent(Event ev) {
-        Image image = GetComponent<Image>();
-
         nodeEvent = ev;
         if (ev.EnvironmentType == EnvironmentType.Town) {
             image.sprite = townSprite;
