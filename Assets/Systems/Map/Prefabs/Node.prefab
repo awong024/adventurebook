@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 224853505776660192}
   - component: {fileID: 222904968991962336}
   - component: {fileID: 114784830927817576}
+  - component: {fileID: 114763049348135078}
   m_Layer: 5
   m_Name: NodeSprite
   m_TagString: Untagged
@@ -168,6 +169,20 @@ MonoBehaviour:
   m_Text: 'Merchant
 
 '
+--- !u!114 &114763049348135078
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1938821190151494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.21323532, g: 0.21323532, b: 0.21323532, a: 0.5}
+  m_EffectDistance: {x: 0, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!114 &114784830927817576
 MonoBehaviour:
   m_ObjectHideFlags: 1
