@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PeepleTray : MonoBehaviour {
     [SerializeField] GameObject[] peepleSlots;
-    [SerializeField] Transform peeplePlacementLayout;
 
     //Init to 7 blank Peeple Figurines
     [SerializeField] PeepleFigurine[] heldFigurines;
@@ -19,15 +18,8 @@ public class PeepleTray : MonoBehaviour {
         instance = this;
 	}
 
-	private void Start() {
-        //Test Peeples
-        StartCoroutine(DelayedStart());
-	}
-
-    private IEnumerator DelayedStart() {
-        yield return new WaitForEndOfFrame();
-        SetPeepleToSlot(heldFigurines[0], 0);
-        SetPeepleToSlot(heldFigurines[1], 1);
+    public static void CreateNewPeeple(Peeple peeple) {
+        
     }
 
 	public static void PlacePeepleOnSlot(PeepleFigurine peeple, int fromIndex, GameObject toSlot) {

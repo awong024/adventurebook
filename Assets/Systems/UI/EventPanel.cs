@@ -11,6 +11,8 @@ public class EventPanel : Panel {
     [SerializeField] Button proceedButton;
     [SerializeField] Button dismissButton;
 
+    [SerializeField] GameObject[] peepleSlots;
+
     private Event currentEvent;
 
     private bool eventFinished = false;

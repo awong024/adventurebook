@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField] NodeNetworkController nodeNetworkController;
     [SerializeField] PeepleManager peepleDataManager;
+    [SerializeField] PeepleTray peepleTray;
 
     public enum Phase {
         ChooseStart,

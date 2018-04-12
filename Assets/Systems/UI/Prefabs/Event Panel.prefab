@@ -61,7 +61,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1309909807612934
 GameObject:
   m_ObjectHideFlags: 1
@@ -78,7 +78,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1337131625838894
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +94,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1364123497533350
 GameObject:
   m_ObjectHideFlags: 1
@@ -111,7 +111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1391103884940926
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,6 +431,10 @@ MonoBehaviour:
   eventDescription: {fileID: 114525852724626512}
   proceedButton: {fileID: 114690391584584612}
   dismissButton: {fileID: 114033981892237318}
+  peepleSlots:
+  - {fileID: 1309909807612934}
+  - {fileID: 1216034932895098}
+  - {fileID: 1364123497533350}
 --- !u!114 &114439731983585784
 MonoBehaviour:
   m_ObjectHideFlags: 1
