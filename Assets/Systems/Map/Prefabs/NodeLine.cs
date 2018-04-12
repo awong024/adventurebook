@@ -1,29 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NodeLine : MonoBehaviour {
-    [SerializeField] Material lineMaterial;
-
-    private GameObject gameObject1;
-    private GameObject gameObject2;
+    private Image image;
+    private GameObject g1;
+    private GameObject g2;
 
     public void DrawNewLineBetween(GameObject g1, GameObject g2) {
-        LineRenderer line = this.gameObject.AddComponent<LineRenderer>();
-        line.startWidth = 5f;
-        line.endWidth = 5f;
-        line.startColor = Color.black;
-        line.endColor = Color.black;
-        line.positionCount = 2;
-        line.material = lineMaterial;
+        image = GetComponent<Image>();
+        image.enabled = false;
+        this.g1 = g1;
+        this.g2 = g2;
 
-        gameObject1 = g1;
-        gameObject2 = g2;
+        StartCoroutine(DelayedDraw());
     }
 
-	private void Update() {
-        LineRenderer line = GetComponent<LineRenderer>();
-        line.SetPosition(0, gameObject1.transform.position);
-        line.SetPosition(1, gameObject2.transform.position);
+    private IEnumerator DelayedDraw() {
+        yield return new WaitForEndOfFrame();
+        DrawLines();
+    }
+
+	private void DrawLines()	{
+        image.enabled = true;
+        Vector3 pointA = g1.transform.position;
+        Vector3 pointB = g2.transform.position;
+
+        Vector3 differenceVector = pointB - pointA;
+
+        RectTransform imageRectTransform = transform as RectTransform;
+
+        imageRectTransform.sizeDelta = new Vector2(differenceVector.magnitude * 2f, 30f);
+        imageRectTransform.pivot = new Vector2(0, 0.5f);
+        imageRectTransform.position = pointA;
+        float angle = Mathf.Atan2(differenceVector.y, differenceVector.x) * Mathf.Rad2Deg;
+        imageRectTransform.rotation = Quaternion.Euler(0, 0, angle);
 	}
 }
