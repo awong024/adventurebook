@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum Attribute {
     Strength,
@@ -10,37 +11,58 @@ public enum Attribute {
 }
 
 public class CharacterSheet : MonoBehaviour {
-    //Base Attribute Stats
-    private Dictionary<int, int> base_attribute_dict = new Dictionary<int, int>();
+    //View
+    [SerializeField] Text strengthLabel;
+    [SerializeField] Text dexterityLabel;
+    [SerializeField] Text intellectLabel;
+    [SerializeField] Text charismaLabel;
 
+    //Base Attribute Stats
     const int BASE_STRENGTH = 6;
     const int BASE_DEXTERITY = 6;
     const int BASE_INTELLECT = 6;
     const int BASE_CHARISMA = 6;
 
+    private int strength;
+    private int dexterity;
+    private int intellect;
+    private int charisma;
+
     //Accessors
-    public int Strength     { get { return base_attribute_dict[(int)Strength]; } }
-    public int Dexterity    { get { return base_attribute_dict[(int)Dexterity]; } }
-    public int Intellect    { get { return base_attribute_dict[(int)Intellect]; } }
-    public int Charisma     { get { return base_attribute_dict[(int)Charisma]; } }
+    public int Strength     { get { return strength; } }
+    public int Dexterity    { get { return dexterity; } }
+    public int Intellect    { get { return intellect; } }
+    public int Charisma     { get { return charisma; } }
 
     //Equipment & Items
     private InventoryManager inventoryManager;
 
-    //Peeple Pool
-
-    //Peeple Hand
-
     //Buffs and Effects
 
-    private void Start() {
-        InitBaseAttributeDictionary();
-	}
+    private bool initialized = false;
 
-	public void InitBaseAttributeDictionary() {
-        base_attribute_dict.Add((int)Strength, BASE_STRENGTH);
-        base_attribute_dict.Add((int)Dexterity, BASE_DEXTERITY);
-        base_attribute_dict.Add((int)Intellect, BASE_INTELLECT);
-        base_attribute_dict.Add((int)Charisma, BASE_CHARISMA);
+    private void OnEnable() {
+        if (!initialized) {
+            InitBaseAttributes();
+        } else {
+            Render();
+        }
     }
+
+	public void InitBaseAttributes() {
+        strength = BASE_STRENGTH + UnityEngine.Random.Range(-2, 3);
+        dexterity = BASE_DEXTERITY + UnityEngine.Random.Range(-2, 3);
+        intellect = BASE_INTELLECT + UnityEngine.Random.Range(-2, 3);
+        charisma = BASE_CHARISMA + UnityEngine.Random.Range(-2, 3);
+
+        initialized = true;
+        Render();
+    }
+
+	private void Render() {
+        strengthLabel.text = Strength.ToString();
+        dexterityLabel.text = Dexterity.ToString();
+        intellectLabel.text = Intellect.ToString();
+        charismaLabel.text = Charisma.ToString();
+	}
 }
