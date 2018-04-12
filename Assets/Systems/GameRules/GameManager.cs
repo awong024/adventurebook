@@ -34,6 +34,20 @@ public class GameManager : MonoBehaviour {
     private void InitGame() {
         nodeNetworkController.InitNewMap();
         peepleDataManager.LoadAllPeeples();
+
+        SetPhase(Phase.ChooseStart);
+    }
+
+    private void SetPhase(Phase phase) {
+        currentPhase = phase;
+    }
+
+    public static bool ChooseStartingNode() {
+        return instance.currentPhase == Phase.ChooseStart;
+    }
+
+    public static bool ChooseNextNodePhase() {
+        return instance.currentPhase == Phase.Movement;
     }
 
     public static void PlayPeeple(PeepleFigurine peepleFigurine) {

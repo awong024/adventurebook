@@ -1100,6 +1100,48 @@ Prefab:
       propertyPath: heldFigurines.Array.data[1]
       value: 
       objectReference: {fileID: 874488321}
+    - target: {fileID: 114756943343035098, guid: b07b56d0d64b847609a66091699695b9,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b18996e3dd3b44af49a75df2b7b9286a,
+        type: 3}
+    - target: {fileID: 114127201640782616, guid: b07b56d0d64b847609a66091699695b9,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b18996e3dd3b44af49a75df2b7b9286a,
+        type: 3}
+    - target: {fileID: 114546977690109776, guid: b07b56d0d64b847609a66091699695b9,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b18996e3dd3b44af49a75df2b7b9286a,
+        type: 3}
+    - target: {fileID: 114884391698362448, guid: b07b56d0d64b847609a66091699695b9,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b18996e3dd3b44af49a75df2b7b9286a,
+        type: 3}
+    - target: {fileID: 114935913925846280, guid: b07b56d0d64b847609a66091699695b9,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b18996e3dd3b44af49a75df2b7b9286a,
+        type: 3}
+    - target: {fileID: 114245229846213622, guid: b07b56d0d64b847609a66091699695b9,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b18996e3dd3b44af49a75df2b7b9286a,
+        type: 3}
+    - target: {fileID: 114304787334497706, guid: b07b56d0d64b847609a66091699695b9,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b18996e3dd3b44af49a75df2b7b9286a,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b07b56d0d64b847609a66091699695b9, type: 2}
   m_IsPrefabParent: 0

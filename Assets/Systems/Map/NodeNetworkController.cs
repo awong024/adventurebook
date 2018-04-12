@@ -33,12 +33,13 @@ public class NodeNetworkController : MonoBehaviour {
         }
     }
 
-    public void NodeClicked(NetworkNode node)
-    {
-        if (playerFigurine.CurrentNode.HasExitTo(node)) {
+    public void NodeClicked(NetworkNode node) {
+        if (GameManager.ChooseStartingNode() && node.Node.NodeRow == 0) {
+            MovePlayerFigurine(node);
+        } else if (GameManager.ChooseNextNodePhase() && playerFigurine.CurrentNode.HasExitTo(node)) {
             MovePlayerFigurine(node);
         }
-        PanelManager.DisplayEventPanel(node.Event);
+        //PanelManager.DisplayEventPanel(node.Event);
     }
 
     private void PlacePlayerFigurine() {
