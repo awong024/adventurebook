@@ -31,7 +31,7 @@ public class NodeLine : MonoBehaviour {
 
         RectTransform imageRectTransform = transform as RectTransform;
 
-        imageRectTransform.sizeDelta = new Vector2(differenceVector.magnitude * 1.5f, 30f);
+        imageRectTransform.sizeDelta = new Vector2(differenceVector.magnitude * 1.5f, 10f);
         imageRectTransform.pivot = new Vector2(0, 0.5f);
         imageRectTransform.position = pointA;
         float angle = Mathf.Atan2(differenceVector.y, differenceVector.x) * Mathf.Rad2Deg;
