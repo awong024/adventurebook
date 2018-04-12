@@ -35,4 +35,8 @@ public class GameManager : MonoBehaviour {
         nodeNetworkController.InitNewMap();
         peepleDataManager.LoadAllPeeples();
     }
+
+    public static void PlayPeeple(PeepleFigurine peepleFigurine) {
+        
+    }
 }

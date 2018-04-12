@@ -6,8 +6,18 @@ using UnityEngine.EventSystems;
 public class DraggablePeeple : MonoBehaviour, IDragHandler, IDropHandler {
     [SerializeField] PeepleFigurine peepleFigurine;
 
+    private int slotIndex;
+    private Vector3 currentPosition;
+
+    public void SetSlotPosition(int newIndex, Vector3 position) {
+        transform.localPosition = position;
+        currentPosition = position;
+        slotIndex = newIndex;
+    }
+
     public void OnDrag(PointerEventData eventData)	{
         transform.position = eventData.position;
+        transform.SetAsLastSibling();
 	}
 
 	public void OnEndDrag(PointerEventData eventData) {
@@ -18,18 +28,21 @@ public class DraggablePeeple : MonoBehaviour, IDragHandler, IDropHandler {
 
         //Play a Peeple
         if (RectTransformUtility.RectangleContainsScreenPoint(DragManager.DropZone, eventData.position)) {
-            
+            Debug.Log("Play Peeple");
         } else {
             //Rearrange in Peeple Tray
-            foreach(GameObject slot in PeepleTray.PeepleSlots) {
+            for (int i = 0; i < PeepleTray.PeepleSlots.Length; i++) {
+                GameObject slot = PeepleTray.PeepleSlots[i];
                 if (RectTransformUtility.RectangleContainsScreenPoint(
                     slot.transform as RectTransform, eventData.position)) {
-                    
+                    //Debug.Log("Drop " + gameObject.name + " from " + slotIndex + " to " + i);
+                    PeepleTray.PlacePeepleOnSlot(peepleFigurine, slotIndex, slot);
+                    return;
                 }
             }
         }
 
         //Reset Position if no valid drop zone
-        transform.localPosition = new Vector3(0, 0, 0);
+        transform.localPosition = currentPosition;
     }
 }

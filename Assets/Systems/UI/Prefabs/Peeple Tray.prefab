@@ -301,6 +301,7 @@ MonoBehaviour:
   - {fileID: 1595423296245118}
   - {fileID: 1042821445013926}
   - {fileID: 1186169103094242}
+  hoverLayer: {fileID: 1648231584543804}
 --- !u!114 &114546977690109776
 MonoBehaviour:
   m_ObjectHideFlags: 1
