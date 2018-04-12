@@ -15,11 +15,21 @@ public class DraggablePeeple : MonoBehaviour, IDragHandler, IDropHandler {
 	}
 
     public void OnDrop(PointerEventData eventData) {
+
+        //Play a Peeple
         if (RectTransformUtility.RectangleContainsScreenPoint(DragManager.DropZone, eventData.position)) {
-            Debug.Log("Dropped in Zone");
+            
         } else {
-            Debug.Log("Dropped nowhere");
+            //Rearrange in Peeple Tray
+            foreach(GameObject slot in PeepleTray.PeepleSlots) {
+                if (RectTransformUtility.RectangleContainsScreenPoint(
+                    slot.transform as RectTransform, eventData.position)) {
+                    
+                }
+            }
         }
+
+        //Reset Position if no valid drop zone
         transform.localPosition = new Vector3(0, 0, 0);
     }
 }

@@ -9,7 +9,7 @@ public class NodeNetworkController : MonoBehaviour {
     List<List<NetworkNode>> networkNodes; //Mapped like 2D array [row, position]
     private PlayerFigurine playerFigurine;
 
-    void Start() {
+    public void InitNewMap() {
         Map map = new Map();
         map.GenerateNodeMap();
 
