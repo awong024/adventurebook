@@ -14,6 +14,6 @@ MonoBehaviour:
   name: Lancer
   peepleType: 0
   gameText: 
-  basePeeple: 0
-  portraitArt: {fileID: 21300000, guid: cfd2c7679ec9a4651ab158c2bf28eac5, type: 3}
-  fullArt: {fileID: 21300000, guid: 89c7f4d0bb7bf46aea7c450836ff875b, type: 3}
+  basePeeple: 1
+  portraitArt: {fileID: 21300000, guid: 870d074a591d4414b982fa2d01036089, type: 3}
+  fullArt: {fileID: 21300000, guid: a8e95d291c0154a1bac66942353597d7, type: 3}

@@ -14,6 +14,6 @@ MonoBehaviour:
   name: Knight
   peepleType: 0
   gameText: 
-  basePeeple: 0
-  portraitArt: {fileID: 21300000, guid: cfd2c7679ec9a4651ab158c2bf28eac5, type: 3}
-  fullArt: {fileID: 21300000, guid: 89c7f4d0bb7bf46aea7c450836ff875b, type: 3}
+  basePeeple: 1
+  portraitArt: {fileID: 21300000, guid: dd0e5d4c593024207a0100fdf0fab3d8, type: 3}
+  fullArt: {fileID: 21300000, guid: f6d4483d4ea584a0ab55c30218aacaae, type: 3}

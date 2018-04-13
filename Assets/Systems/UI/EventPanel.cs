@@ -104,6 +104,10 @@ public class EventPanel : Panel {
     }
 
     //DEMO only
+    private void CalculateSuccess() {
+        
+    }
+
     private void RandomizeReward() {
         int random = UnityEngine.Random.Range(0, 1);
         if (random == 0) {

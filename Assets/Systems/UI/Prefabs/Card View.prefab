@@ -19,13 +19,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224463440946035902}
+  - component: {fileID: 114268620976963730}
   m_Layer: 5
   m_Name: Card View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1797227505822270
 GameObject:
   m_ObjectHideFlags: 0
@@ -37,7 +38,7 @@ GameObject:
   - component: {fileID: 222435733025906432}
   - component: {fileID: 114747891478549620}
   m_Layer: 5
-  m_Name: STR
+  m_Name: Name Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,7 +56,7 @@ GameObject:
   - component: {fileID: 114544542752604654}
   - component: {fileID: 114812755946575948}
   m_Layer: 5
-  m_Name: character
+  m_Name: Character Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +64,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1872010689377112
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -72,7 +73,7 @@ GameObject:
   - component: {fileID: 222056016297057042}
   - component: {fileID: 114569237515668502}
   m_Layer: 5
-  m_Name: description
+  m_Name: Game Text Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,6 +96,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114268620976963730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1556341056453028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fcb5b2182bf04ab486cb42a387d19c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameLabel: {fileID: 114747891478549620}
+  peepleArt: {fileID: 114544542752604654}
 --- !u!114 &114544542752604654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,7 +168,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Description goes here. Description goes here.Description goes here
+  m_Text: 
 --- !u!114 &114747891478549620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -200,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 1, y: -3}
+  m_EffectDistance: {x: 1, y: -6}
   m_UseGraphicAlpha: 1
 --- !u!114 &114894973130428448
 MonoBehaviour:
@@ -283,6 +297,7 @@ RectTransform:
   m_Children:
   - {fileID: 224468577191658626}
   - {fileID: 224427096612491830}
+  - {fileID: 224962273834754170}
   - {fileID: 224698358194622366}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -301,8 +316,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 224962273834754170}
+  m_Children: []
   m_Father: {fileID: 224463440946035902}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -322,12 +336,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224463440946035902}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -14.1, y: 79.8}
-  m_SizeDelta: {x: -46.5, y: -284.2}
+  m_AnchoredPosition: {x: -3.9, y: 31.4}
+  m_SizeDelta: {x: -26.2, y: -128.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224962273834754170
 RectTransform:
@@ -339,11 +353,11 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 224468577191658626}
-  m_RootOrder: 0
+  m_Father: {fileID: 224463440946035902}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.538}
   m_AnchorMin: {x: 0.16229934, y: 0}
   m_AnchorMax: {x: 1, y: 0.1583687}
-  m_AnchoredPosition: {x: -16.6, y: 123.200005}
-  m_SizeDelta: {x: -90.6, y: -14.8}
+  m_AnchoredPosition: {x: -43.414486, y: 129.899}
+  m_SizeDelta: {x: -37.070946, y: -1.4020052}
   m_Pivot: {x: 0.5, y: 0.5}

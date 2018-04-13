@@ -14,6 +14,6 @@ MonoBehaviour:
   name: Spymaster
   peepleType: 1
   gameText: 
-  basePeeple: 0
-  portraitArt: {fileID: 21300000, guid: 1d5fbda491e0c4415b4d14effc57c29e, type: 3}
-  fullArt: {fileID: 21300000, guid: 1e4e3a91fd5654dfb862e8137b0bea9e, type: 3}
+  basePeeple: 1
+  portraitArt: {fileID: 21300000, guid: fee0279f7779c4c7b96ee22a35e3993c, type: 3}
+  fullArt: {fileID: 21300000, guid: df0d18866ed5d4d79b0ba4486837a9a1, type: 3}

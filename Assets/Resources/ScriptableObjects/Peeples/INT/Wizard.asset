@@ -14,6 +14,6 @@ MonoBehaviour:
   name: Wizard
   peepleType: 2
   gameText: 
-  basePeeple: 0
-  portraitArt: {fileID: 21300000, guid: 917694ef0b83147e9bf89771b3cde853, type: 3}
-  fullArt: {fileID: 21300000, guid: 97ed13a2712c348c69375e518701f23f, type: 3}
+  basePeeple: 1
+  portraitArt: {fileID: 21300000, guid: d0cc53099684f45849f35d1e3c720925, type: 3}
+  fullArt: {fileID: 21300000, guid: ff2cb5f23e1a94abea25ab93cfbd7bc1, type: 3}

@@ -14,6 +14,6 @@ MonoBehaviour:
   name: Priest
   peepleType: 2
   gameText: 
-  basePeeple: 0
-  portraitArt: {fileID: 21300000, guid: 917694ef0b83147e9bf89771b3cde853, type: 3}
-  fullArt: {fileID: 21300000, guid: 97ed13a2712c348c69375e518701f23f, type: 3}
+  basePeeple: 1
+  portraitArt: {fileID: 21300000, guid: 7062649ba417e4542abd9831b75d9cf0, type: 3}
+  fullArt: {fileID: 21300000, guid: f41245bbe0190443592cd90f77abf81b, type: 3}

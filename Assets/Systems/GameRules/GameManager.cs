@@ -51,6 +51,11 @@ public class GameManager : MonoBehaviour {
 
         DrawPeeple();
         DrawPeeple();
+        DrawPeeple();
+        DrawPeeple();
+        DrawPeeple();
+        DrawPeeple();
+        DrawPeeple();
     }
 
     private void SetPhase(Phase phase) {
