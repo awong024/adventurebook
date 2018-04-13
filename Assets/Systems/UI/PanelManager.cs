@@ -24,4 +24,8 @@ public class PanelManager : MonoBehaviour {
     private void DismissPanel(Panel panel) {
         panel.Dismiss();
     }
+
+    public static bool PlayPeepleToEvent(PeepleFigurine peeple) {
+        return instance.eventPanel.ContributePeeple(peeple);
+    }
 }

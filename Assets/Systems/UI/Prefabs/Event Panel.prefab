@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224788910256255710}
   - component: {fileID: 222234048500513874}
-  - component: {fileID: 114841664571887058}
+  - component: {fileID: 114083027352003936}
   m_Layer: 5
   m_Name: Action Area
   m_TagString: Untagged
@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 222935156082219792}
   - component: {fileID: 114692255265773908}
   - component: {fileID: 114690391584584612}
+  - component: {fileID: 114038067033989972}
   m_Layer: 5
   m_Name: Proceed Button
   m_TagString: Untagged
@@ -287,6 +288,25 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114038067033989972
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1962391603026762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 1
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &114054769782499736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -314,6 +334,28 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114083027352003936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1008063539542158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -405508275, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 15
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
 --- !u!114 &114183383080714656
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -431,6 +473,13 @@ MonoBehaviour:
   eventDescription: {fileID: 114525852724626512}
   proceedButton: {fileID: 114690391584584612}
   dismissButton: {fileID: 114033981892237318}
+  townArt: {fileID: 21300000, guid: 762c742a974dc4866b9b4dcbb995c0bd, type: 3}
+  wildArt: {fileID: 21300000, guid: 05da9407205664d1e9b4299b43fee703, type: 3}
+  ruinsArt: {fileID: 21300000, guid: 250143869dc614726b9b9951365f061b, type: 3}
+  strPanel: {fileID: 21300000, guid: 54c0af4b2199d4e4e8c2cad7df660aa4, type: 3}
+  dexPanel: {fileID: 21300000, guid: 9bd543a9149634d1182fdd71fe0523ed, type: 3}
+  intPanel: {fileID: 21300000, guid: 627a6fdd8dab8497396b6e1897987d07, type: 3}
+  chaPanel: {fileID: 21300000, guid: 38b83d67fe1f8446ab39ba38a6d3eee6, type: 3}
   peepleSlots:
   - {fileID: 1309909807612934}
   - {fileID: 1216034932895098}
@@ -534,7 +583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.3151623, b: 0.8308824, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -542,12 +591,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 36
+    m_Font: {fileID: 12800000, guid: 4fe5d022719444f40b0cb869647e82ab, type: 3}
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -702,33 +751,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 0, y: -15}
   m_UseGraphicAlpha: 1
---- !u!114 &114841664571887058
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1008063539542158}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.58012164, g: 0.33823532, b: 1, a: 0.472}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
 --- !u!222 &222234048500513874
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -816,7 +838,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 293, y: -50}
+  m_AnchoredPosition: {x: 335, y: -55.35}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224071166174981992
@@ -869,9 +891,9 @@ RectTransform:
   m_Father: {fileID: 224788910256255710}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 312, y: -4.4}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 783, y: -61.5}
   m_SizeDelta: {x: 174.5, y: 87.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224400384036605708
@@ -907,7 +929,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 418, y: -50}
+  m_AnchoredPosition: {x: 450, y: -55.35}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224555639159718412
@@ -985,7 +1007,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 547, y: -50}
+  m_AnchoredPosition: {x: 565, y: -55.35}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224784180102953286

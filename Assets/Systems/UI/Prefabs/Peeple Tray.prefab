@@ -319,6 +319,11 @@ MonoBehaviour:
   - {fileID: 1042821445013926}
   - {fileID: 1186169103094242}
   peepleLayer: {fileID: 224717553045365174}
+  strPanel: {fileID: 21300000, guid: 54c0af4b2199d4e4e8c2cad7df660aa4, type: 3}
+  dexPanel: {fileID: 21300000, guid: 9bd543a9149634d1182fdd71fe0523ed, type: 3}
+  intPanel: {fileID: 21300000, guid: 627a6fdd8dab8497396b6e1897987d07, type: 3}
+  chaPanel: {fileID: 21300000, guid: 38b83d67fe1f8446ab39ba38a6d3eee6, type: 3}
+  blankPanel: {fileID: 21300000, guid: b18996e3dd3b44af49a75df2b7b9286a, type: 3}
   heldFigurines:
   - {fileID: 0}
   - {fileID: 0}

@@ -11,6 +11,15 @@ public class EventPanel : Panel {
     [SerializeField] Button proceedButton;
     [SerializeField] Button dismissButton;
 
+    [SerializeField] Sprite townArt;
+    [SerializeField] Sprite wildArt;
+    [SerializeField] Sprite ruinsArt;
+
+    [SerializeField] Sprite strPanel;
+    [SerializeField] Sprite dexPanel;
+    [SerializeField] Sprite intPanel;
+    [SerializeField] Sprite chaPanel;
+
     [SerializeField] GameObject[] peepleSlots;
 
     private Event currentEvent;
@@ -28,16 +37,36 @@ public class EventPanel : Panel {
     public void Render(Event nodeEvent) {
         currentEvent = nodeEvent;
 
-        titleLabel.text = currentEvent.Challenge.ChallengeName;
-        //Render Environment Art
+        titleLabel.text = currentEvent.EnvironmentType.ToString();
+        environmentImage.sprite = EnvironmentToSprite(currentEvent.EnvironmentType);
         eventDescription.text = currentEvent.Challenge.Description;
 
         for (int i = 0; i < peepleSlots.Length; i++) {
-            peepleSlots[i].SetActive(i < currentEvent.Challenge.AttributeSlots.Length);
+            if (i < currentEvent.Challenge.AttributeSlots.Length) {
+                peepleSlots[i].SetActive(true);
+                peepleSlots[i].GetComponent<Image>().sprite = AttributeToSprite(currentEvent.Challenge.AttributeSlots[i]);
+                foreach(Transform child in peepleSlots[i].transform) {
+                    GameObject.DestroyObject(child.gameObject);
+                }
+            }
+            else peepleSlots[i].SetActive(false);
         }
 
         eventFinished = false;
         SetButtons();
+    }
+
+    public bool ContributePeeple(PeepleFigurine peeple) {
+        for (int i = 0; i < peepleSlots.Length; i++) {
+            if (peepleSlots[i].activeSelf && 
+                peepleSlots[i].transform.childCount == 0 &&
+                currentEvent.Challenge.AttributeSlots[i] == peeple.Peeple.PeepleType) {
+                peeple.transform.SetParent(peepleSlots[i].transform, false);
+                peeple.transform.localPosition = new Vector3(0, 0, 0);
+                return true;
+            }
+        }
+        return false;
     }
 
     public void ProceedClicked() {
@@ -54,6 +83,21 @@ public class EventPanel : Panel {
     private void SetButtons() {
         dismissButton.gameObject.SetActive(eventFinished);
         proceedButton.gameObject.SetActive(!eventFinished);
+    }
+
+    private Sprite AttributeToSprite(Attribute attribute) {
+        if (attribute == Attribute.Strength) return strPanel;
+        if (attribute == Attribute.Dexterity) return dexPanel;
+        if (attribute == Attribute.Intellect) return intPanel;
+        if (attribute == Attribute.Charisma) return chaPanel;
+        return null;
+    }
+
+    private Sprite EnvironmentToSprite(EnvironmentType env) {
+        if (env == EnvironmentType.Town) return townArt;
+        if (env == EnvironmentType.Wild) return wildArt;
+        if (env == EnvironmentType.Ruins) return ruinsArt;
+        return null;
     }
 
 }

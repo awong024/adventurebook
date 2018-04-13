@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour {
         peepleTray.CreateNewPeeple(peepleDataManager.DrawPeepleFromPool());
     }
 
-    public static void PlayPeeple(PeepleFigurine peepleFigurine) {
-        
+    public static bool PlayPeeple(PeepleFigurine peepleFigurine) {
+        return PanelManager.PlayPeepleToEvent(peepleFigurine);
     }
 }

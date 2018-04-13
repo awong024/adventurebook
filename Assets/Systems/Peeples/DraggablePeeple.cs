@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DraggablePeeple : MonoBehaviour, IDragHandler, IDropHandler {
+public class DraggablePeeple : MonoBehaviour, IDragHandler, IDropHandler, IPointerEnterHandler, IPointerExitHandler {
     [SerializeField] PeepleFigurine peepleFigurine;
 
     private int slotIndex;
@@ -28,7 +28,10 @@ public class DraggablePeeple : MonoBehaviour, IDragHandler, IDropHandler {
 
         //Play a Peeple
         if (RectTransformUtility.RectangleContainsScreenPoint(DragManager.DropZone, eventData.position)) {
-            Debug.Log("Play Peeple");
+            if (GameManager.PlayPeeple(peepleFigurine)) {
+                PeepleTray.RemovePeeple(slotIndex);
+                return;
+            }
         } else {
             //Rearrange in Peeple Tray
             for (int i = 0; i < PeepleTray.PeepleSlots.Length; i++) {
@@ -44,5 +47,13 @@ public class DraggablePeeple : MonoBehaviour, IDragHandler, IDropHandler {
 
         //Reset Position if no valid drop zone
         transform.localPosition = currentPosition;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData) {
+        PeepleTray.DisplayPeepleCard(peepleFigurine.Peeple);
+    }
+
+    public void OnPointerExit(PointerEventData eventData) {
+        PeepleTray.HidePeepleCard();
     }
 }

@@ -1,11 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PeepleTray : MonoBehaviour {
     [SerializeField] GameObject peepleFigurinePrefab;
     [SerializeField] GameObject[] peepleSlots;
     [SerializeField] Transform peepleLayer;
+    [SerializeField] CardView cardView;
+
+    [SerializeField] Sprite strPanel;
+    [SerializeField] Sprite dexPanel;
+    [SerializeField] Sprite intPanel;
+    [SerializeField] Sprite chaPanel;
+    [SerializeField] Sprite blankPanel;
 
     //Init to 7 blank Peeple Figurines
     [SerializeField] PeepleFigurine[] heldFigurines;
@@ -50,7 +58,33 @@ public class PeepleTray : MonoBehaviour {
         if (peeple != null) {
             DraggablePeeple draggable = peeple.GetComponent<DraggablePeeple>();
             draggable.SetSlotPosition(index, PeepleSlots[index].transform.localPosition);
+            heldFigurines[index] = peeple;
+            peepleSlots[index].GetComponent<Image>().sprite = AttributeToSprite(peeple.Peeple.PeepleType);
+        } else {
+            RemovePeeple(index);
+            peepleSlots[index].GetComponent<Image>().sprite = blankPanel;
         }
-        heldFigurines[index] = peeple;
+    }
+
+    public static void RemovePeeple(int index) {
+        HeldFigurines[index] = null;
+        instance.peepleSlots[index].GetComponent<Image>().sprite = instance.blankPanel;
+    }
+
+    private Sprite AttributeToSprite(Attribute attribute) {
+        if (attribute == Attribute.Strength) return strPanel;
+        if (attribute == Attribute.Dexterity) return dexPanel;
+        if (attribute == Attribute.Intellect) return intPanel;
+        if (attribute == Attribute.Charisma) return chaPanel;
+        return null;
+    }
+
+    public static void DisplayPeepleCard(Peeple peeple) {
+        instance.cardView.gameObject.SetActive(true);
+        instance.cardView.Render(peeple);
+    }
+
+    public static void HidePeepleCard() {
+        instance.cardView.gameObject.SetActive(false);
     }
 }
