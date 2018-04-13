@@ -7,6 +7,7 @@ public class EventPanel : Panel {
     [SerializeField] Text titleLabel;
     [SerializeField] Image environmentImage;
     [SerializeField] Text eventDescription;
+    [SerializeField] Text successChanceLabel;
 
     [SerializeField] Button proceedButton;
     [SerializeField] Button dismissButton;
@@ -56,6 +57,7 @@ public class EventPanel : Panel {
 
         eventFinished = false;
         SetButtons();
+        successChanceLabel.text = "Success: 70%";
     }
 
     public bool ContributePeeple(PeepleFigurine peeple) {
@@ -65,6 +67,8 @@ public class EventPanel : Panel {
                 currentEvent.Challenge.AttributeSlots[i] == peeple.Peeple.PeepleType) {
                 peeple.transform.SetParent(peepleSlots[i].transform, false);
                 peeple.transform.localPosition = new Vector3(0, 0, 0);
+
+                CalculateSuccess();
                 return true;
             }
         }
@@ -74,6 +78,7 @@ public class EventPanel : Panel {
     public void ProceedClicked() {
         bool success = currentEvent.ProcessEvent();
         eventFinished = true;
+        successChanceLabel.text = "";
 
         SetButtons();
 
@@ -105,14 +110,26 @@ public class EventPanel : Panel {
 
     //DEMO only
     private void CalculateSuccess() {
-        
+        int successChance = 70;
+
+        for (int i = 0; i < peepleSlots.Length; i++) {
+            if (peepleSlots[i].activeSelf && peepleSlots[i].transform.childCount > 0) {
+                successChance += 15;
+            }
+        }
+        successChanceLabel.text = "Success: " + successChance.ToString() + "%";
     }
 
+    //DEMO only
     private void RandomizeReward() {
-        int random = UnityEngine.Random.Range(0, 1);
+        int random = UnityEngine.Random.Range(0, 2);
         if (random == 0) {
             GameManager.GrantBonusStats();
             eventDescription.text = "Success! You found loot";
+        } else {
+            GameManager.DrawOnePeeple();
+            GameManager.DrawOnePeeple();
+            eventDescription.text = "You Recruited two new Peeples!";
         }
     }
 

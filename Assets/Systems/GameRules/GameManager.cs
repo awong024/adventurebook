@@ -107,4 +107,8 @@ public class GameManager : MonoBehaviour {
         if (random1 == 3)   instance.characterSheet.bonus_cha += random2;
         instance.characterSheet.Render();
     }
+
+    public static void DrawOnePeeple() {
+        instance.DrawPeeple();
+    }
 }
