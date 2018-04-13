@@ -37,7 +37,11 @@ public class CharacterSheet : MonoBehaviour {
     //Equipment & Items
     private InventoryManager inventoryManager;
 
-    //Buffs and Effects
+    //Upgrades
+    public int bonus_str = 0;
+    public int bonus_dex = 0;
+    public int bonus_int = 0;
+    public int bonus_cha = 0;
 
     private bool initialized = false;
 
@@ -59,10 +63,10 @@ public class CharacterSheet : MonoBehaviour {
         Render();
     }
 
-	private void Render() {
-        strengthLabel.text = Strength.ToString();
-        dexterityLabel.text = Dexterity.ToString();
-        intellectLabel.text = Intellect.ToString();
-        charismaLabel.text = Charisma.ToString();
+	public void Render() {
+        strengthLabel.text = bonus_str > 0 ? Strength.ToString() + " + " + bonus_str.ToString() : Strength.ToString();
+        dexterityLabel.text = bonus_dex > 0 ? Dexterity.ToString() + " + " + bonus_dex.ToString() : Dexterity.ToString();
+        intellectLabel.text = bonus_int > 0 ? Intellect.ToString() + " + " + bonus_int.ToString() : Intellect.ToString();
+        charismaLabel.text = bonus_cha > 0 ? Charisma.ToString() + " + " + bonus_cha.ToString() : Charisma.ToString();
 	}
 }

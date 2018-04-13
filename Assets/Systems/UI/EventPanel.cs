@@ -27,10 +27,12 @@ public class EventPanel : Panel {
     private bool eventFinished = false;
 
 	public override void Display() {
+        GameManager.EnableCharacterSheet(true);
         base.Display();
 	}
 
     public override void Dismiss() {
+        GameManager.EnableCharacterSheet(false);
         base.Dismiss();
     }
 
@@ -73,11 +75,12 @@ public class EventPanel : Panel {
         bool success = currentEvent.ProcessEvent();
         eventFinished = true;
 
-        eventDescription.text = success.ToString() + "!";
-
         SetButtons();
 
         GameManager.EventCompleted();
+
+        //DEMO only
+        RandomizeReward();
     }
 
     private void SetButtons() {
@@ -98,6 +101,15 @@ public class EventPanel : Panel {
         if (env == EnvironmentType.Wild) return wildArt;
         if (env == EnvironmentType.Ruins) return ruinsArt;
         return null;
+    }
+
+    //DEMO only
+    private void RandomizeReward() {
+        int random = UnityEngine.Random.Range(0, 1);
+        if (random == 0) {
+            GameManager.GrantBonusStats();
+            eventDescription.text = "Success! You found loot";
+        }
     }
 
 }

@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField] PeepleManager peepleDataManager;
     [SerializeField] EventManager eventManager;
     [SerializeField] PeepleTray peepleTray;
+    [SerializeField] CharacterSheet characterSheet;
 
     public enum Phase {
         ChooseStart,
@@ -79,11 +80,26 @@ public class GameManager : MonoBehaviour {
         instance.SetPhase(Phase.Movement);
     }
 
+    public static void EnableCharacterSheet(bool enable) {
+        instance.characterSheet.gameObject.SetActive(enable);
+    }
+
     private void DrawPeeple() {
         peepleTray.CreateNewPeeple(peepleDataManager.DrawPeepleFromPool());
     }
 
     public static bool PlayPeeple(PeepleFigurine peepleFigurine) {
         return PanelManager.PlayPeepleToEvent(peepleFigurine);
+    }
+
+    //DEMO only
+    public static void GrantBonusStats() {
+        int random1 = UnityEngine.Random.Range(0, 4);
+        int random2 = UnityEngine.Random.Range(2, 4);
+        if (random1 == 0)   instance.characterSheet.bonus_str += random2;
+        if (random1 == 1)   instance.characterSheet.bonus_dex += random2;
+        if (random1 == 2)   instance.characterSheet.bonus_int += random2;
+        if (random1 == 3)   instance.characterSheet.bonus_cha += random2;
+        instance.characterSheet.Render();
     }
 }
