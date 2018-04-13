@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField] NodeNetworkController nodeNetworkController;
     [SerializeField] PeepleManager peepleDataManager;
+    [SerializeField] EventManager eventManager;
     [SerializeField] PeepleTray peepleTray;
 
     public enum Phase {
@@ -35,6 +36,8 @@ public class GameManager : MonoBehaviour {
     private void InitGame() {
         nodeNetworkController.InitNewMap();
         peepleDataManager.LoadAllPeeples();
+        eventManager.LoadAllChallenges();
+        eventManager.PopulateEvents(nodeNetworkController.NetworkNodes);
 
         SetPhase(Phase.ChooseStart);
 

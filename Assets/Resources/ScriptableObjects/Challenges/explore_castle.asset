@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2fbc5508102240faa2d59eb376b5824, type: 3}
+  m_Name: explore_castle
+  m_EditorClassIdentifier: 
+  challengeName: Castle Ruins
+  description: You discover the ruins of an ancient fort. Explore!
+  challengeType: 1
+  attributeSlots: 0200000001000000

@@ -28,16 +28,14 @@ public class EventPanel : Panel {
     public void Render(Event nodeEvent) {
         currentEvent = nodeEvent;
 
-        titleLabel.text = currentEvent.EnvironmentType.ToString();
+        titleLabel.text = currentEvent.Challenge.ChallengeName;
         //Render Environment Art
-        //Render Event Description
-        if (currentEvent.Activity is Encounter) {
-            eventDescription.text = "Encounter";
-        } else if (currentEvent.Activity is Merchant) {
-            eventDescription.text = "Merchant";
-        } else if (currentEvent.Activity is Challenge) {
-            eventDescription.text = "Challenge";
+        eventDescription.text = currentEvent.Challenge.Description;
+
+        for (int i = 0; i < peepleSlots.Length; i++) {
+            peepleSlots[i].SetActive(i < currentEvent.Challenge.AttributeSlots.Length);
         }
+
         eventFinished = false;
         SetButtons();
     }

@@ -1066,6 +1066,7 @@ GameObject:
   - component: {fileID: 1848906078}
   - component: {fileID: 1848906079}
   - component: {fileID: 1848906080}
+  - component: {fileID: 1848906081}
   m_Layer: 5
   m_Name: Managers
   m_TagString: Untagged
@@ -1104,6 +1105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeNetworkController: {fileID: 1257912661}
   peepleDataManager: {fileID: 1848906079}
+  eventManager: {fileID: 1848906081}
   peepleTray: {fileID: 215619688}
 --- !u!114 &1848906079
 MonoBehaviour:
@@ -1128,6 +1130,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropZone: {fileID: 854140746}
+--- !u!114 &1848906081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1848906076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406dfea97cf62441fb6ec264350bc0e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1879665881
 Prefab:
   m_ObjectHideFlags: 0

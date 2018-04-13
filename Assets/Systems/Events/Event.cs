@@ -14,30 +14,34 @@ public class Activity {
 
 //Each Node has one Event
 //Events can contain multiple Activities
-public class Event {
+public class Event
+{
     private EnvironmentType environmentType;
     private List<Activity> activities = new List<Activity>(); //For now, only one Activity
+    private Challenge challenge;
 
     //Accessors
     public EnvironmentType EnvironmentType { get { return environmentType; } }
-    public Activity Activity { get { return activities[0]; } }
+    public Activity Activity { get { return activities[0]; } } //Ignore for now
+    public Challenge Challenge { get { return challenge; } }
+
 
     //Town = Merchant / Rest
     //Wild = Encounter
     //Ruins = Explore Challenge
-    public void GenerateTownEvent() {
+    public void GenerateTownEvent(Challenge challenge) {
         environmentType = EnvironmentType.Town;
-        activities.Add(new Merchant());
+        this.challenge = challenge;
     }
 
-    public void GenerateWildEvent() {
+    public void GenerateWildEvent(Challenge challenge) {
         environmentType = EnvironmentType.Wild;
-        activities.Add(new Encounter());
+        this.challenge = challenge;
     }
 
-    public void GenerateRuinsEvent() {
+    public void GenerateRuinsEvent(Challenge challenge) {
         environmentType = EnvironmentType.Ruins;
-        activities.Add(new Challenge());
+        this.challenge = challenge;
     }
 
     public bool ProcessEvent() {

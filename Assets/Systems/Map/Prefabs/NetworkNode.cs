@@ -65,15 +65,5 @@ public class NetworkNode : MonoBehaviour {
             image.sprite = ruinSprite;
         }
 
-        if (ev.Activity is Challenge) {
-            activityLabel.text = "Challenge";
-        } else if (ev.Activity is Encounter) {
-            activityLabel.text = "Encounter";
-        } else if (ev.Activity is Merchant) {
-            activityLabel.text = "Merchant";
-        } else {
-            activityLabel.text = "";
-        }
-
     }
 }

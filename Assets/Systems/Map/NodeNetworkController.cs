@@ -9,6 +9,8 @@ public class NodeNetworkController : MonoBehaviour {
     List<List<NetworkNode>> networkNodes; //Mapped like 2D array [row, position]
     private PlayerFigurine playerFigurine;
 
+    public List<List<NetworkNode>> NetworkNodes { get { return networkNodes; } }
+
     public void InitNewMap() {
         Map map = new Map();
         map.GenerateNodeMap();
@@ -16,7 +18,7 @@ public class NodeNetworkController : MonoBehaviour {
         networkNodes = nodeNetworkView.GenerateNodeNetwork(map, this);
 
         CreateNodeLinks();
-        EventRules.PopulateEvents(networkNodes);
+        //EventRules.PopulateEvents(networkNodes);
 
         PlacePlayerFigurine();
     }
