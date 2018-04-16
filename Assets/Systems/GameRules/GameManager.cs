@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour {
 
     private static GameManager instance;
 
+    //Accessors
+    public static CharacterSheet CharacterSheet { get { return instance.characterSheet; } }
+
 	private void Awake() {
         instance = this;
 	}

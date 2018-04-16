@@ -12,6 +12,7 @@ public enum Attribute {
 
 public class CharacterSheet : MonoBehaviour {
     //View
+    [SerializeField] Text levelLabel;
     [SerializeField] Text strengthLabel;
     [SerializeField] Text dexterityLabel;
     [SerializeField] Text intellectLabel;
@@ -23,12 +24,15 @@ public class CharacterSheet : MonoBehaviour {
     const int BASE_INTELLECT = 6;
     const int BASE_CHARISMA = 6;
 
+    private int level = 1;
+
     private int strength;
     private int dexterity;
     private int intellect;
     private int charisma;
 
     //Accessors
+    public int Level        { get { return level; } }
     public int Strength     { get { return strength; } }
     public int Dexterity    { get { return dexterity; } }
     public int Intellect    { get { return intellect; } }
@@ -54,6 +58,7 @@ public class CharacterSheet : MonoBehaviour {
     }
 
 	public void InitBaseAttributes() {
+        level = 1;
         strength = BASE_STRENGTH + UnityEngine.Random.Range(-2, 3);
         dexterity = BASE_DEXTERITY + UnityEngine.Random.Range(-2, 3);
         intellect = BASE_INTELLECT + UnityEngine.Random.Range(-2, 3);

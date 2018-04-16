@@ -45,18 +45,18 @@ public class EventManager : MonoBehaviour {
         int fullTable = ENV_TOWN_CHANCE + ENV_WILD_CHANCE + ENV_RUINS_CHANCE;
         int roll = UnityEngine.Random.Range(0, fullTable);
 
+        EnvironmentType environmentType;
+
         if (roll < ENV_TOWN_CHANCE) {
-            Challenge challenge = DrawChallengeByType(Challenge.Type.Town);
-            ev.GenerateTownEvent(challenge);
+            environmentType = EnvironmentType.Town;
         }
         else if (roll < ENV_TOWN_CHANCE + ENV_WILD_CHANCE) {
-            Challenge challenge = DrawChallengeByType(Challenge.Type.CombatCheck);
-            ev.GenerateWildEvent(challenge);
+            environmentType = EnvironmentType.Wild;
         }
         else {
-            Challenge challenge = DrawChallengeByType(Challenge.Type.Explore);
-            ev.GenerateRuinsEvent(challenge);
+            environmentType = EnvironmentType.Ruins;
         }
+        ev.Init(environmentType, new Encounter());
         return ev;
     }
 }

@@ -22,7 +22,7 @@ public class Event
 
     //Accessors
     public EnvironmentType EnvironmentType { get { return environmentType; } }
-    public Activity Activity { get { return activities[0]; } } //Ignore for now
+    public Activity Activity { get { return activities[0]; } }
     public Challenge Challenge { get { return challenge; } }
 
 
@@ -42,6 +42,11 @@ public class Event
     public void GenerateRuinsEvent(Challenge challenge) {
         environmentType = EnvironmentType.Ruins;
         this.challenge = challenge;
+    }
+
+    public void Init(EnvironmentType environment, Activity activity) {
+        environmentType = environment;
+        activities.Add(activity);
     }
 
     public bool ProcessEvent() {

@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38762670250cb49718da9706f689dee9, type: 3}
   m_Name: Travelling Merchant
   m_EditorClassIdentifier: 
-  name: Travelling Merchant
+  name: Merchant
   peepleType: 3
   gameText: 
   basePeeple: 1

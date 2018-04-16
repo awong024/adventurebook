@@ -9,6 +9,8 @@ public class EventPanel : Panel {
     [SerializeField] Text eventDescription;
     [SerializeField] Text successChanceLabel;
 
+    [SerializeField] BattleView battleView;
+
     [SerializeField] Button proceedButton;
     [SerializeField] Button dismissButton;
 
@@ -24,8 +26,13 @@ public class EventPanel : Panel {
     [SerializeField] GameObject[] peepleSlots;
 
     private Event currentEvent;
+    private List<Peeple> peepleList = new List<Peeple>();
 
     private bool eventFinished = false;
+
+    private int successRate = 70;
+
+    private const int NUM_COMBAT_PEEPLE_SLOTS = 2;
 
 	public override void Display() {
         GameManager.EnableCharacterSheet(true);
@@ -39,58 +46,94 @@ public class EventPanel : Panel {
 
     public void Render(Event nodeEvent) {
         currentEvent = nodeEvent;
+        titleLabel.text = "Combat";
+        environmentImage.sprite = EnvironmentToSprite(currentEvent.EnvironmentType);
+        eventDescription.text = "";
 
+        for (int i = 0; i < peepleSlots.Length; i++) {
+            peepleSlots[i].SetActive(i < NUM_COMBAT_PEEPLE_SLOTS);
+        }
+        peepleList.Clear();
+    }
+
+    public void Render(Challenge challenge) {
         titleLabel.text = currentEvent.EnvironmentType.ToString();
         environmentImage.sprite = EnvironmentToSprite(currentEvent.EnvironmentType);
-        eventDescription.text = currentEvent.Challenge.Description;
+        eventDescription.text = currentEvent.Challenge.ChallengeName;
 
         for (int i = 0; i < peepleSlots.Length; i++) {
             if (i < currentEvent.Challenge.AttributeSlots.Length) {
                 peepleSlots[i].SetActive(true);
                 peepleSlots[i].GetComponent<Image>().sprite = AttributeToSprite(currentEvent.Challenge.AttributeSlots[i]);
-                foreach(Transform child in peepleSlots[i].transform) {
-                    GameObject.DestroyObject(child.gameObject);
-                }
             }
             else peepleSlots[i].SetActive(false);
         }
 
         eventFinished = false;
         SetButtons();
-        successChanceLabel.text = "Success: 70%";
+        successRate = 70 + UnityEngine.Random.Range(-5, 6);
+        successChanceLabel.text = "Success: " + successRate.ToString() + "%";
     }
 
     public bool ContributePeeple(PeepleFigurine peeple) {
-        for (int i = 0; i < peepleSlots.Length; i++) {
-            if (peepleSlots[i].activeSelf && 
-                peepleSlots[i].transform.childCount == 0 &&
-                currentEvent.Challenge.AttributeSlots[i] == peeple.Peeple.PeepleType) {
+        for (int i = 0; i < peepleSlots.Length; i++)
+        {
+            if (peepleSlots[i].activeSelf &&
+                peepleSlots[i].transform.childCount == 0)
+            {
                 peeple.transform.SetParent(peepleSlots[i].transform, false);
                 peeple.transform.localPosition = new Vector3(0, 0, 0);
 
-                CalculateSuccess();
+                peepleList.Add(peeple.Peeple);
                 return true;
             }
         }
+
+        //for (int i = 0; i < peepleSlots.Length; i++) {
+        //    if (peepleSlots[i].activeSelf && 
+        //        peepleSlots[i].transform.childCount == 0 &&
+        //        currentEvent.Challenge.AttributeSlots[i] == peeple.Peeple.PeepleType) {
+        //        peeple.transform.SetParent(peepleSlots[i].transform, false);
+        //        peeple.transform.localPosition = new Vector3(0, 0, 0);
+
+        //        CalculateSuccess();
+        //        return true;
+        //    }
+        //}
         return false;
     }
 
     public void ProceedClicked() {
-        bool success = currentEvent.ProcessEvent();
-        eventFinished = true;
-        successChanceLabel.text = "";
+        Encounter encounter = currentEvent.Activity as Encounter;
 
-        SetButtons();
+        Battle battle = new Battle();
+        battle.InitBattle(GameManager.CharacterSheet, peepleList, encounter.Peeples);
 
-        GameManager.EventCompleted();
+        battleView.gameObject.SetActive(true);
+        battleView.Render(battle);
 
-        //DEMO only
-        RandomizeReward();
+        //bool success = currentEvent.ProcessEvent();
+        //eventFinished = true;
+        //successChanceLabel.text = "";
+        //RandomizeReward();
+
+        //SetButtons();
+
+        //GameManager.EventCompleted();
     }
 
     private void SetButtons() {
         dismissButton.gameObject.SetActive(eventFinished);
         proceedButton.gameObject.SetActive(!eventFinished);
+    }
+
+    private void CleanupSlots() {
+        for (int i = 0; i < peepleSlots.Length; i++) {
+            foreach (Transform child in peepleSlots[i].transform) {
+                GameObject.DestroyObject(child.gameObject);
+            }
+            peepleSlots[i].SetActive(false);
+        }
     }
 
     private Sprite AttributeToSprite(Attribute attribute) {
@@ -110,8 +153,7 @@ public class EventPanel : Panel {
 
     //DEMO only
     private void CalculateSuccess() {
-        int successChance = 70;
-
+        int successChance = successRate;
         for (int i = 0; i < peepleSlots.Length; i++) {
             if (peepleSlots[i].activeSelf && peepleSlots[i].transform.childCount > 0) {
                 successChance += 15;
