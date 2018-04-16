@@ -262,13 +262,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Systems\Battle\Battle.cs" />
     <Compile Include="Assets\Systems\Battle\BattleCharacter.cs" />
+    <Compile Include="Assets\Systems\Battle\BattleCharacterView.cs" />
+    <Compile Include="Assets\Systems\Battle\BattleView.cs" />
     <Compile Include="Assets\Systems\Events\Challenge.cs" />
+    <Compile Include="Assets\Systems\Events\ChallengeModel.cs" />
     <Compile Include="Assets\Systems\Events\Encounter.cs" />
     <Compile Include="Assets\Systems\Events\Event.cs" />
+    <Compile Include="Assets\Systems\Events\EventManager.cs" />
     <Compile Include="Assets\Systems\Events\Merchant.cs" />
     <Compile Include="Assets\Systems\GameRules\EventRules.cs" />
-    <Compile Include="Assets\Systems\GameRules\PhaseManager.cs" />
+    <Compile Include="Assets\Systems\GameRules\GameManager.cs" />
     <Compile Include="Assets\Systems\Items\InventoryManager.cs" />
     <Compile Include="Assets\Systems\Items\Item.cs" />
     <Compile Include="Assets\Systems\Map\Map.cs" />
@@ -280,11 +285,19 @@
     <Compile Include="Assets\Systems\Map\Prefabs\NodeLine.cs" />
     <Compile Include="Assets\Systems\Map\Prefabs\NodeView.cs" />
     <Compile Include="Assets\Systems\Peeples\Ability.cs" />
+    <Compile Include="Assets\Systems\Peeples\DraggablePeeple.cs" />
     <Compile Include="Assets\Systems\Peeples\Peeple.cs" />
+    <Compile Include="Assets\Systems\Peeples\PeepleFigurine.cs" />
+    <Compile Include="Assets\Systems\Peeples\PeepleManager.cs" />
+    <Compile Include="Assets\Systems\Peeples\PeepleModel.cs" />
+    <Compile Include="Assets\Systems\Peeples\PeepleTray.cs" />
     <Compile Include="Assets\Systems\Player\CharacterSheet.cs" />
     <Compile Include="Assets\Systems\UI\Base\Panel.cs" />
+    <Compile Include="Assets\Systems\UI\CardView.cs" />
+    <Compile Include="Assets\Systems\UI\DragManager.cs" />
     <Compile Include="Assets\Systems\UI\EventPanel.cs" />
     <Compile Include="Assets\Systems\UI\PanelManager.cs" />
+    <Compile Include="Assets\Systems\Util\CreateScriptableObjects.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
