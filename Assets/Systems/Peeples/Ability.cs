@@ -3,22 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //The basis for Card Actions and Item Actions
-public class Ability {
-    public enum Type {
-        Damage,
-        GrantBuff,
-        DrawCards,
-    }
-}
+public abstract class Ability {
+  public enum Type {
+    Battle,
+    Adventure
+  }
 
-//Passive Abilities on Allies such as Tags
-public class PassiveAbility {
-    public enum Type {
-        CombatAlly,
-        Party
-    }
-}
+  private string abilityName;
 
-public class Buff {
-    
+  public string AbilityName { get { return abilityName; } }
 }

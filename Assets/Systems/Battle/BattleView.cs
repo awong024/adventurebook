@@ -3,39 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BattleView : MonoBehaviour {
-    [SerializeField] BattleCharacterView[] myTeamCharacterViews;
-    [SerializeField] BattleCharacterView[] enemyTeamCharacterViews;
+  [SerializeField] BattleCharacterView myCharacterView;
+  [SerializeField] BattleCharacterView enemyCharacterView;
 
-    public void Render(Battle battle) {
-        ClearBattleCharacters();
-        RenderMyTeam(battle.MyTeam);
-        RenderEnemyTeam(battle.EnemyTeam);
-	}
+  [SerializeField] BattleAbilityView[] battleAbilityViews;
 
-    private void RenderMyTeam(List<BattleCharacter> characters) {
-        for (int i = 0; i < characters.Count; i++) {
-            myTeamCharacterViews[characters[i].Index].gameObject.SetActive(true);
-            myTeamCharacterViews[characters[i].Index].Init(characters[i]);
-        }
-    }
+  //Test
+  [SerializeField] BattleAbilityModel testAbilityA;
+  [SerializeField] BattleAbilityModel testAbilityB;
+  [SerializeField] BattleAbilityModel testAbilityC;
 
-    private void RenderEnemyTeam(List<BattleCharacter> characters) {
-        for (int i = 0; i < characters.Count; i++) {
-            enemyTeamCharacterViews[characters[i].Index].gameObject.SetActive(true);
-            enemyTeamCharacterViews[characters[i].Index].Init(characters[i]);
-        }
-    }
+  public void Render(Battle battle) {
+    RenderMyTeam(battle.MyBattleCharacter);
+    RenderEnemyTeam(battle.EnemyBattleCharacter);
 
-    private void ClearBattleCharacters() {
-        for (int i = 0; i < myTeamCharacterViews.Length; i++) {
-            myTeamCharacterViews[i].gameObject.SetActive(false);
-        }
-        for (int i = 0; i < enemyTeamCharacterViews.Length; i++) {
-            enemyTeamCharacterViews[i].gameObject.SetActive(false);
-        }
-    }
+    battleAbilityViews[0].Render(new BattleAbility(testAbilityA));
+    battleAbilityViews[1].Render(new BattleAbility(testAbilityB));
+    battleAbilityViews[2].Render(new BattleAbility(testAbilityC));
+  }
 
-    private void ProcessAction() {
-        
-    }
+  private void RenderMyTeam(BattleCharacter character) {
+    myCharacterView.Init(character);
+  }
+
+  private void RenderEnemyTeam(BattleCharacter character) {
+    enemyCharacterView.Init(character);
+  }
 }
