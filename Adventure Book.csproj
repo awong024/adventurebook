@@ -263,6 +263,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Systems\Battle\Battle.cs" />
+    <Compile Include="Assets\Systems\Battle\BattleAbility.cs" />
+    <Compile Include="Assets\Systems\Battle\BattleAbilityModel.cs" />
+    <Compile Include="Assets\Systems\Battle\BattleAbilityView.cs" />
     <Compile Include="Assets\Systems\Battle\BattleCharacter.cs" />
     <Compile Include="Assets\Systems\Battle\BattleCharacterView.cs" />
     <Compile Include="Assets\Systems\Battle\BattleView.cs" />
@@ -285,6 +288,7 @@
     <Compile Include="Assets\Systems\Map\Prefabs\NodeLine.cs" />
     <Compile Include="Assets\Systems\Map\Prefabs\NodeView.cs" />
     <Compile Include="Assets\Systems\Peeples\Ability.cs" />
+    <Compile Include="Assets\Systems\Peeples\AdventureAbility.cs" />
     <Compile Include="Assets\Systems\Peeples\DraggablePeeple.cs" />
     <Compile Include="Assets\Systems\Peeples\Peeple.cs" />
     <Compile Include="Assets\Systems\Peeples\PeepleFigurine.cs" />
@@ -297,6 +301,7 @@
     <Compile Include="Assets\Systems\UI\DragManager.cs" />
     <Compile Include="Assets\Systems\UI\EventPanel.cs" />
     <Compile Include="Assets\Systems\UI\PanelManager.cs" />
+    <Compile Include="Assets\Systems\Util\AdventureUtils.cs" />
     <Compile Include="Assets\Systems\Util\CreateScriptableObjects.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

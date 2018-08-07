@@ -26,15 +26,6 @@ public class EventManager : MonoBehaviour {
         return challenges[random];
     }
 
-    public void PopulateEvents(List<List<NetworkNode>> networkNodes) {
-        for (int i = 0; i < networkNodes.Count; i++) {
-            for (int k = 0; k < networkNodes[i].Count; k++) {
-                NetworkNode node = networkNodes[i][k];
-                node.LoadEvent(GenerateRandomEvent());
-            }
-        }
-    }
-
     private const int ENV_TOWN_CHANCE = 30;
     private const int ENV_WILD_CHANCE = 30;
     private const int ENV_RUINS_CHANCE = 30;

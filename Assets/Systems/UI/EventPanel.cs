@@ -35,12 +35,10 @@ public class EventPanel : Panel {
   private const int NUM_COMBAT_PEEPLE_SLOTS = 2;
 
   public override void Display() {
-    GameManager.EnableCharacterSheet(true);
     base.Display();
   }
 
   public override void Dismiss() {
-    GameManager.EnableCharacterSheet(false);
     base.Dismiss();
   }
 
@@ -101,22 +99,7 @@ public class EventPanel : Panel {
   }
 
   public void ProceedClicked() {
-    Encounter encounter = currentEvent.Activity as Encounter;
-
-    Battle battle = new Battle();
-    battle.InitBattle(GameManager.CharacterSheet, peepleList, encounter.Peeple);
-
-    battleView.gameObject.SetActive(true);
-    battleView.Render(battle);
-
-    //bool success = currentEvent.ProcessEvent();
-    //eventFinished = true;
-    //successChanceLabel.text = "";
-    //RandomizeReward();
-
-    //SetButtons();
-
-    //GameManager.EventCompleted();
+    
   }
 
   private void SetButtons() {
@@ -158,18 +141,4 @@ public class EventPanel : Panel {
     }
     successChanceLabel.text = "Success: " + successChance.ToString() + "%";
   }
-
-  //DEMO only
-  private void RandomizeReward() {
-    int random = UnityEngine.Random.Range(0, 2);
-    if (random == 0) {
-      GameManager.GrantBonusStats();
-      eventDescription.text = "Success! You found loot";
-    } else {
-      GameManager.DrawOnePeeple();
-      GameManager.DrawOnePeeple();
-      eventDescription.text = "You Recruited two new Peeples!";
-    }
-  }
-
 }

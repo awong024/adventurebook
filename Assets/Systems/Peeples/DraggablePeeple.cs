@@ -27,26 +27,26 @@ public class DraggablePeeple : MonoBehaviour, IDragHandler, IDropHandler, IPoint
     public void OnDrop(PointerEventData eventData) {
 
         //Play a Peeple
-        if (RectTransformUtility.RectangleContainsScreenPoint(DragManager.DropZone, eventData.position)) {
-            if (GameManager.PlayPeeple(peepleFigurine)) {
-                PeepleTray.RemovePeeple(slotIndex);
-                return;
-            }
-        } else {
-            //Rearrange in Peeple Tray
-            for (int i = 0; i < PeepleTray.PeepleSlots.Length; i++) {
-                GameObject slot = PeepleTray.PeepleSlots[i];
-                if (RectTransformUtility.RectangleContainsScreenPoint(
-                    slot.transform as RectTransform, eventData.position)) {
-                    //Debug.Log("Drop " + gameObject.name + " from " + slotIndex + " to " + i);
-                    PeepleTray.PlacePeepleOnSlot(peepleFigurine, slotIndex, slot);
-                    return;
-                }
-            }
-        }
+        //if (RectTransformUtility.RectangleContainsScreenPoint(DragManager.DropZone, eventData.position)) {
+        //    if (GameManager.PlayPeeple(peepleFigurine)) {
+        //        PeepleTray.RemovePeeple(slotIndex);
+        //        return;
+        //    }
+        //} else {
+        //    //Rearrange in Peeple Tray
+        //    for (int i = 0; i < PeepleTray.PeepleSlots.Length; i++) {
+        //        GameObject slot = PeepleTray.PeepleSlots[i];
+        //        if (RectTransformUtility.RectangleContainsScreenPoint(
+        //            slot.transform as RectTransform, eventData.position)) {
+        //            //Debug.Log("Drop " + gameObject.name + " from " + slotIndex + " to " + i);
+        //            PeepleTray.PlacePeepleOnSlot(peepleFigurine, slotIndex, slot);
+        //            return;
+        //        }
+        //    }
+        //}
 
-        //Reset Position if no valid drop zone
-        transform.localPosition = currentPosition;
+        ////Reset Position if no valid drop zone
+        //transform.localPosition = currentPosition;
     }
 
     public void OnPointerEnter(PointerEventData eventData) {

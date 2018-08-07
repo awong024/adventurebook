@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224570611497759630}
   - component: {fileID: 222479364779897082}
-  - component: {fileID: 114128201854329730}
+  - component: {fileID: 114767435656640070}
   - component: {fileID: 114333871216191748}
   m_Layer: 5
   m_Name: Node
@@ -64,24 +64,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114128201854329730
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1931730367755588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e18b8bb959c34a969b86e19fce9f5af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  image: {fileID: 114784830927817576}
-  nodeLinePrefab: {fileID: 1756836648066810, guid: 626f662e15b744b9eb846dc1f71dc904,
-    type: 2}
-  townSprite: {fileID: 21300000, guid: acca681254e76454ebdbfcc99210bf2b, type: 3}
-  wildSprite: {fileID: 21300000, guid: 601f959a75a3947ee9ae75ec4c3de2ac, type: 3}
-  ruinSprite: {fileID: 21300000, guid: e423a337d6952412fb739a1b9af83866, type: 3}
-  activityLabel: {fileID: 114587341405469454}
 --- !u!114 &114333871216191748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,18 +102,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114128201854329730}
-        m_MethodName: ClickNode
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114587341405469454
@@ -183,6 +154,17 @@ MonoBehaviour:
   m_EffectColor: {r: 0.21323532, g: 0.21323532, b: 0.21323532, a: 0.5}
   m_EffectDistance: {x: 0, y: -5}
   m_UseGraphicAlpha: 1
+--- !u!114 &114767435656640070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1931730367755588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 230fa8abb7f724c15bfde2b0fa3edf63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114784830927817576
 MonoBehaviour:
   m_ObjectHideFlags: 1
