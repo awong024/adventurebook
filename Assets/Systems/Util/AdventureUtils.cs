@@ -15,4 +15,9 @@ public static class AdventureUtils {
       list[n] = value;
     }
   }
+
+  public static bool RollChance(int chance) {
+    int roll = UnityEngine.Random.Range(0, 100);
+    return roll < chance;
+  }
 }

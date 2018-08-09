@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Systems/Map/MapController.cs">
     <Files>
       <File FileName="Assets/Systems/GameRules/GameManager.cs" Line="33" Column="28" />
-      <File FileName="Assets/Systems/Map/MapController.cs" Line="27" Column="33" />
-      <File FileName="Assets/Systems/Map/MapNode.cs" Line="11" Column="30" />
+      <File FileName="Assets/Systems/Map/MapController.cs" Line="85" Column="11" />
+      <File FileName="Assets/Systems/Map/MapNode.cs" Line="36" Column="32" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
