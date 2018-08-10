@@ -1,9 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Systems/Map/MapController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Systems/UI/PlayingCard.cs">
     <Files>
-      <File FileName="Assets/Systems/GameRules/GameManager.cs" Line="33" Column="28" />
-      <File FileName="Assets/Systems/Map/MapController.cs" Line="85" Column="11" />
-      <File FileName="Assets/Systems/Map/MapNode.cs" Line="36" Column="32" />
+      <File FileName="Assets/Systems/GameRules/GameManager.cs" Line="22" Column="16" />
+      <File FileName="Assets/Systems/Map/MapController.cs" Line="166" Column="51" />
+      <File FileName="Assets/Systems/Map/MapNode.cs" Line="41" Column="4" />
+      <File FileName="Assets/Systems/Characters/CharacterLoader.cs" Line="14" Column="36" />
+      <File FileName="Assets/Systems/Characters/CharacterModel.cs" Line="19" Column="45" />
+      <File FileName="Assets/Systems/Characters/Character.cs" Line="7" Column="5" />
+      <File FileName="Assets/Systems/UI/PlayingCard.cs" Line="25" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

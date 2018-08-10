@@ -1,2 +1,23 @@
-Library/
-.vs/
+/obj
+/Temp
+/Library
+
+.DS_Store
+.vscode
+.vs
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+*.orig.meta
+
+# Unity3D generated meta files
+*.pidb.meta
+
+# Unity3D Generated File On Crash Reports
+sysinfo.txt

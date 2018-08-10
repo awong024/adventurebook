@@ -5,12 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
   //UI
   [SerializeField] MapController mapController;
-  [SerializeField] PeepleTray peepleTray;
-  [SerializeField] CharacterSheet characterSheet;
-  [SerializeField] EventPanel eventPanel;
 
   //Data Loaders and Stores
-  private PeepleData peepleData;
+  private CharacterLoader characterLoader;
 
   public enum Phase {
     ChooseStart,
@@ -22,6 +19,7 @@ public class GameManager : MonoBehaviour {
   private Phase currentPhase;
 
   private void Start() {
+    InitData();
     InitGame();
   }
 

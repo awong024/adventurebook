@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AdventureAbility : Ability {
-  
+public class Character {
+  public Character(CharacterModel model) {
+    
+  }
 }
