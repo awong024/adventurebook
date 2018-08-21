@@ -7,7 +7,7 @@ public class CharacterLoader {
 
   private List<Character> characterPool = new List<Character>();
 
-  private void LoadAllCharacters() {
+  public void LoadCharacters() {
     Object[] models = Resources.LoadAll(CHARACTER_DIR, typeof(CharacterModel));
 
     foreach (CharacterModel model in models) {

@@ -24,7 +24,8 @@ public class GameManager : MonoBehaviour {
   }
 
   private void InitData() {
-    
+    characterLoader = new CharacterLoader();
+    characterLoader.LoadCharacters();
   }
 
   private void InitGame() {
